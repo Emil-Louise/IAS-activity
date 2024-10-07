@@ -121,7 +121,7 @@ function register() {
         })
     }
     if (valid && selected) {
-        const modal = new bootstrap.Modal(document.querySelector('#staticBackdrop'));
+        const modal = new bootstrap.Modal(document.querySelector('#modalConfirm'));
         modal.show();
         document.querySelector('#testconfirm').textContent = fname.value.toUpperCase() + " " + mname.value.toUpperCase() + " " + lname.value.toUpperCase();
         document.querySelector('#testconfirm2').textContent = email.value;
@@ -168,7 +168,7 @@ function add() {
 
         // subject seletions
         let newDiv = document.createElement('div');
-        newDiv.className = "col-11 mt-3";
+        newDiv.className = "col-10 mt-3";
 
         let options = document.createElement('select');
         options.className = "form-select course";
@@ -180,23 +180,19 @@ function add() {
         subjectOptions.textContent = "Select subject";
         options.appendChild(subjectOptions);
 
-        let subjectOptions1 = document.createElement('option');
-        subjectOptions1.textContent = "One";
-        options.appendChild(subjectOptions1);
-
-        let subjectOptions2 = document.createElement('option');
-        subjectOptions2.textContent = "Two";
-        options.appendChild(subjectOptions2);
-
-        let subjectOptions3 = document.createElement('option');
-        subjectOptions3.textContent = "Three";
-        options.appendChild(subjectOptions3);
+        let subjects = ["One", "Two", "Three"];
+        subjects.forEach(subject => {
+            let option = document.createElement('option');
+            option.textContent = subject;
+            option.value = subject;
+            options.appendChild(option);
+        });
 
         newDiv.appendChild(options);
 
         //remove button
         let removeButton = document.createElement('div');
-        removeButton.className = "col mt-3"
+        removeButton.className = "col-2 mt-3"
 
         let btn = document.createElement('button');
         btn.className = "btn btn-light border border-sublte";
@@ -213,9 +209,62 @@ function add() {
         })
         removeButton.appendChild(btn);
 
+        function updateOptions() {
+            const selectedValues = Array.from(document.querySelectorAll('.course')).map(select => select.value);
+            document.querySelectorAll('.course').forEach(select => {
+                select.querySelectorAll('option').forEach(option => {
+                    if (selectedValues.includes(option.value) && option.value !== select.value) {
+                        option.disabled = true;
+                    } else {
+                        option.disabled = false;
+                    }
+                });
+            });
+        }
+        options.addEventListener('focus', updateOptions);
+
         let classSel = document.querySelector('#subjects');
         classSel.appendChild(newDiv);
         classSel.appendChild(removeButton);
     }
     selected.addEventListener('focus', (event) => event.target.style.outline = 'none');
+}
+
+function confirmRegister() {
+    let timerInterval;
+    Swal.fire({
+        title: "Checking credentials",
+        html: "This will take a moment.",
+        timer: 2000,
+        didOpen: () => {
+            Swal.showLoading();
+            const timer = Swal.getPopup().querySelector("b");
+            timerInterval = setInterval(() => {
+                timer.textContent = `${Swal.getTimerLeft()}`;
+            }, 100);
+        },
+        willClose: () => {
+            clearInterval(timerInterval);
+        }
+    }).then((result) => {
+        let course = document.getElementsByClassName('course');
+        let courseList = '';
+        let comma = ', ';
+        for (let i = 0; i < subjectCount; i++) {
+            if (i == subjectCount - 1)
+                comma = '';
+            courseList += course[i].value + comma;
+        };
+        document.querySelector('#course').innerHTML = courseList;
+        Swal.fire({
+            title: "Registration successful!",
+            text: "You are now registered to " + courseList,
+            icon: "success",
+            backdrop: false
+        }).then((result) => {
+            if (result.isConfirmed || result.dismiss) {
+                window.location.href = 'confirm.html';
+            }
+        });
+    });
 }

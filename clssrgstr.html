@@ -38,7 +38,7 @@
             <div class="mb-4" id="class">
                 <p class="m-0">Course</p>
                 <div class="row" id="subjects">
-                    <div class="col-11">
+                    <div class="col-10">
                         <select class="form-select course" aria-label="Default select example" id="selCourse1">
                             <option selected>Select subject</option>
                             <option>One</option>
@@ -46,7 +46,7 @@
                             <option>Three</option>
                         </select>
                     </div>
-                    <div class="col">
+                    <div class="col-2">
                         <button type="button" class="btn btn-light border border-sublte" style="color: grey" disabled><i
                                 class="bi bi-dash-lg"></i></button>
                     </div>
@@ -58,12 +58,12 @@
             <div class="d-flex justify-content-center">
                 <button type="button" class="btn btn-primary mt-4 w-75" onclick="register()">REGISTER</button>
             </div>
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal fade" id="modalConfirm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="modalConfirmLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Confirm registration?</h1>
+                            <h1 class="modal-title fs-5" id="modalConfirmLabel">Confirm registration?</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -76,7 +76,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-primary">Register</button>
+                            <button type="button" class="btn btn-primary" onclick="confirmRegister()">Register</button>
                         </div>
                     </div>
                 </div>
@@ -85,6 +85,7 @@
     </div>
 
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="clssrgstrjs.js"></script>
 </body>
 
