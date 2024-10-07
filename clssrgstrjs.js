@@ -160,7 +160,7 @@ function add() {
         })
         selected.style.outline = "solid 4px rgb(244, 67, 54, .6)";
     }
-    else if (subjectCount >= 3) {
+    else if (subjectCount >= 5) {
         alert('You\'ve selected all subjects');
     }
     else {
@@ -180,7 +180,7 @@ function add() {
         subjectOptions.textContent = "Select subject";
         options.appendChild(subjectOptions);
 
-        let subjects = ["One", "Two", "Three"];
+        let subjects = ["IAS 1", "OS", "IM 3", "NET 2", "HCI 1"];
         subjects.forEach(subject => {
             let option = document.createElement('option');
             option.textContent = subject;
