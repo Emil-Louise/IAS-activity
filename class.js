@@ -103,7 +103,7 @@ function register() {
     }
 
     // Clear outlines on focus
-    ['fname', 'mname','lname', 'inpEmail', ...Array.from(document.getElementsByClassName('course')).map(course => course.id)].forEach(id => {
+    ['fname', 'mname', 'lname', 'inpEmail', ...Array.from(document.getElementsByClassName('course')).map(course => course.id)].forEach(id => {
         document.querySelector(`#${id}`).addEventListener('focus', (event) => event.target.style.outline = 'none');
     });
 }
@@ -207,6 +207,12 @@ function createIcon(className) {
 
 function confirmRegister() {
     let timerInterval;
+    let mdl = document.querySelector('#modalConfirm');
+    mdl.classList.remove('show');
+    mdl.setAttribute('aria-hidden', 'true');
+    mdl.setAttribute('style', 'display: none');
+    // const modal = new bootstrap.Modal(document.querySelector('#modalConfirm'));
+    // modal.hide();
     Swal.fire({
         title: "Checking credentials",
         html: "This will take a moment.",
