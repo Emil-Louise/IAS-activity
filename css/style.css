@@ -1,23 +1,23 @@
 body {
-    background: linear-gradient(125deg, #D9D9D9, #D9D9D9 24%, #FFFFF2 24%, #FFFFF2 38%, #9E9E9E 38%, #9E9E9E);
+    background: linear-gradient(125deg, #D9D9D9 24%, #FFFFF2 24%, #FFFFF2 38%, #9E9E9E 38%);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
 }
 
-.box{
+.box {
     border: 1px solid #1E1E1E;
     background-color: #91AACA;
     position: absolute;
 }
-    
-.box p{
+
+.box p {
     font-family: "BenchNine", sans-serif;
     font-weight: lighter;
     color: #000000;
 }
 
-#fullName{
+#fullName {
     color: #FFFFF2;
     letter-spacing: 0;
     font-family: "BenchNine", sans-serif;
@@ -30,39 +30,39 @@ body {
     z-index: -1;
 }
 
-#contactInfo{
+#contactInfo {
     color: #56769F;
     letter-spacing: 0;
     text-align: center;
 }
 
-#sub{
+#sub {
     font-family: "BenchNine", sans-serif;
     text-align: center;
     color: #FFFFF2;
     font-weight: 100;
 }
 
-.yearandsub{
+.yearandsub {
     position: absolute;
     background-color: #56769F;
 }
 
-#year{
+#year {
     font-family: "BenchNine", sans-serif;
     margin-bottom: 0;
     line-height: 2vh;
 }
 
 /* DESKTOP LAYOUT */
-@media screen and (min-width: 1020px){
+@media screen and (min-width: 1020px) {
     #infoContainer {
         margin-right: 40px;
         padding-top: 60px;
         width: 200px;
         position: relative;
     }
-    
+
     .box {
         top: 21.4vh;
         left: 8.8vw;
@@ -72,20 +72,20 @@ body {
         letter-spacing: .6vw;
         padding: 66px 40px;
     }
-    
-    #infoContainer img{
+
+    #infoContainer img {
         width: 25.6vw;
         height: 79.6vh;
         object-fit: cover;
         right: -36.6vw;
         border-radius: 185px;
     }
-    
-    #fullName{
+
+    #fullName {
         font-size: 44px;
         line-height: 44px;
     }
-    
+
     #yrSection {
         margin: 26px 0;
         text-align: center;
@@ -93,12 +93,12 @@ body {
         font-size: 24px;
         letter-spacing: 6px;
     }
-    
+
     #contactInfo {
         font-size: 18px;
         line-height: 20px;
     }
-    
+
     .yearandsub {
         width: 46vw;
         height: 100vh;
@@ -106,13 +106,13 @@ body {
         top: 0;
         padding-top: 20vh;
     }
-    
+
     #year {
         font-size: 2vw;
         margin: 2vh;
         text-indent: 6vw;
     }
-    
+
     #sub {
         font-size: 4vw;
         line-height: 8vh;
@@ -123,20 +123,20 @@ body {
     }
 }
 
-/*      ====>> MOBILE LAYOUT <<=====        */
-@media screen and (max-width: 430px){
+/* MOBILE LAYOUT */
+@media screen and (max-width: 430px) {
     .heading {
         height: 11vh;
         background-color: #709ACF;
     }
-    
+
     #infoContainer {
         width: 100%;
         height: 70vh;
         position: relative;
         overflow: hidden;
     }
-    
+
     .box {
         top: 8vh;
         right: 52vw;
@@ -146,32 +146,32 @@ body {
         letter-spacing: 1vw;
         padding: 4vh;
     }
-    
-    #infoContainer img{
+
+    #infoContainer img {
         height: 52vh;
         object-fit: contain;
         top: -.4vh;
         right: -22vw;
         border-radius: 48vh;
     }
-    
-    #fullName{
+
+    #fullName {
         font-size: 8vw;
         line-height: 3.5vh;
     }
-    
+
     #yrSection {
         margin-top: 3vh;
         text-align: center;
         line-height: 2.5vh;
     }
-    
+
     #contactInfo {
         line-height: 2vh;
         font-size: 4vw;
         margin-left: -4.5vw;
     }
-    
+
     .yearandsub {
         width: 100vw;
         height: 38vh;
@@ -179,13 +179,13 @@ body {
         margin: 0;
         padding-top: 20px;
     }
-    
+
     #year {
         font-size: 6vw;
         margin: 1vh;
         text-indent: 10vw;
     }
-    
+
     #sub {
         font-size: 12vw;
         line-height: 5vh;
@@ -196,73 +196,73 @@ body {
 }
 
 /* TAB LAYOUT */
-@media screen and (min-width: 431px) and (max-width: 1019px){
+@media screen and (min-width: 431px) and (max-width: 1019px) {
     .heading {
-        height: 8vh;
+        height: 82px;
         background-color: #709ACF;
     }
-    
+
     #infoContainer {
         width: 100%;
-        height: 70vh;
+        height: 717px;
         position: relative;
         overflow: hidden;
     }
-    
+
     .box {
-        top: 10vh;
+        top: 102.4px;
         right: 52vw;
-        height: 35vh;
+        height: 358.4px;
         width: 41vw;
         font-size: 4vw;
         letter-spacing: 1vw;
-        padding: 4vh;
+        padding: 41px;
     }
-    
-    #infoContainer img{
-        height: 52vh;
+
+    #infoContainer img {
+        height: 532.5px;
         object-fit: contain;
-        top: 1vh;
+        top: 10.24px;
         right: 6vw;
-        border-radius: 48vh;
+        border-radius: 491.52px;
     }
-    
-    #fullName{
+
+    #fullName {
         font-size: 8vw;
-        line-height: 5vh;
+        line-height: 60px;
     }
-    
+
     #yrSection {
-        margin-top: 2vh;
+        margin-top: 20.5px;
         text-align: center;
-        line-height: 3vh;
+        line-height: 30.72px;
     }
-    
+
     #contactInfo {
-        line-height: 2vh;
+        line-height: 20.5px;
         font-size: 3vw;
         margin-left: -2vw;
     }
-    
+
     .yearandsub {
         width: 100vw;
-        height: 38vh;
-        bottom: 0;
+        height: 700px;
+        top: 636px;
         margin: 0;
         padding-top: 20px;
     }
-    
+
     #year {
         font-size: 4vw;
         margin: 1vh;
         text-indent: 10vw;
     }
-    
+
     #sub {
         font-size: 10vw;
-        line-height: 6vh;
+        line-height: 80px;
         margin: 0;
-        margin-bottom: 1vh;
+        margin-bottom: 10.24px;
         letter-spacing: .8vw;
     }
 }
