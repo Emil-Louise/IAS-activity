@@ -95,8 +95,8 @@ function register() {
     if (valid && selected) {
         const modal = new bootstrap.Modal(document.querySelector('#modalConfirm'));
         modal.show();
-        document.querySelector('#testconfirm').textContent = `${document.querySelector('#fname').value.toUpperCase()} ${document.querySelector('#mname').value.toUpperCase()} ${document.querySelector('#lname').value.toUpperCase()}`;
-        document.querySelector('#testconfirm2').textContent = document.querySelector('#inpEmail').value;
+        document.querySelector('#nameConfirm').textContent = `${document.querySelector('#fname').value.toUpperCase()} ${document.querySelector('#mname').value.toUpperCase()} ${document.querySelector('#lname').value.toUpperCase()}`;
+        document.querySelector('#emailConfirm').textContent = document.querySelector('#inpEmail').value;
 
         const courseList = Array.from(document.getElementsByClassName('course')).map(course => course.value).join(', ');
         document.querySelector('#course').innerHTML = courseList;
@@ -211,8 +211,6 @@ function confirmRegister() {
     mdl.classList.remove('show');
     mdl.setAttribute('aria-hidden', 'true');
     mdl.setAttribute('style', 'display: none');
-    // const modal = new bootstrap.Modal(document.querySelector('#modalConfirm'));
-    // modal.hide();
     Swal.fire({
         title: "Checking credentials",
         html: "This will take a moment.",
