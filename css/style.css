@@ -266,3 +266,9 @@ body {
         letter-spacing: .8vw;
     }
 }
+
+.navbar {
+    background-color: #56769F;
+    box-shadow: #505d7a 0 2px 5px;
+    border-bottom: solid 1px #505d7a;
+}

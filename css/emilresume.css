@@ -1,0 +1,81 @@
+body {
+    background: linear-gradient(125deg, #D9D9D9 24%, #FFFFF2 24%, #FFFFF2 38%, #9E9E9E 38%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+h1 {
+    font-family: 'Courier New';
+    color: #505d7a;
+    font-weight: bolder;
+}
+
+p {
+    font-family: 'Segoe UI';
+    color: #5153a3;
+    color: #FFFFF2;
+    text-shadow: 2px 2px 6px #000000;
+
+}
+
+.size {
+    /* padding: .31in; */
+    background-color: rgba(230, 230, 230, 0.7);
+    box-shadow: 2px 2px 10px 2px;
+}
+
+.mainInfo {
+    height: inherit;
+    background-color: #56769F;
+    border-right: solid 2px #91AACA;
+}
+
+.mainInfo-img img {
+    width: 1.5in;
+    border-radius: 50%;
+    outline: solid 2px #000000;
+}
+
+.body-contents {
+    height: 11in;
+    background-color: #e2eeff;
+    /* width: 100%; */
+}
+
+ul {
+    font-family: 'Segoe UI';
+}
+
+h3 {
+    font-family: 'Courier New';
+    color: #505d7a;
+}
+
+.personal-info {
+    padding-top: .01in;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.experience {
+    height: max-content;
+    font-family: 'Segoe UI';
+    margin-bottom: 60px;
+}
+
+.education {
+    margin-bottom: 60px;
+}
+
+.font {
+    font-family: 'Courier New';
+    font-size: large;
+    font-weight: bold;
+}
+
+.navbar {
+    background-color: #56769F;
+    box-shadow: #505d7a 0 2px 5px;
+    border-bottom: solid 1px #505d7a;
+}
