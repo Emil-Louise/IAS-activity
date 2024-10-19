@@ -45,21 +45,36 @@ function validateFields() {
     let selected = true;
 
     // Validate first name
-    if (fname.value.trim() === '' || fname.value.startsWith(' ')) {
+    if (fname.value.trim() === '') {
         valid = false;
-        showError(fname, fname.value.trim() === '' ? 'Please enter your first name' : 'Name can\'t start with spaces');
+        showError(fname, 'Please enter your first name');
+    } else if (fname.value.startsWith(' ')) {
+        valid = false;
+        showError(fname, 'Name can\'t start with spaces');
+    } else if (fname.value.endsWith(' ')) {
+        valid = false;
+        showError(fname, 'Name can\'t end with spaces');
     }
 
     // Validate middle name
     if (mname.value.startsWith(' ')) {
         valid = false;
         showError(mname, 'Middle name can\'t start with spaces');
+    } else if (mname.value.endsWith(' ')) {
+        valid = false;
+        showError(mname, 'Middle name can\'t end with spaces');
     }
 
-    // Validate last name
-    if (lname.value.trim() === '' || lname.value.startsWith(' ')) {
+    // Validate first name
+    if (lname.value.trim() === '') {
         valid = false;
-        showError(lname, lname.value.trim() === '' ? 'Please enter your last name' : 'Last name can\'t start with spaces');
+        showError(lname, 'Please enter your last name');
+    } else if (lname.value.startsWith(' ')) {
+        valid = false;
+        showError(lname, 'Last name can\'t start with spaces');
+    } else if (lname.value.endsWith(' ')) {
+        valid = false;
+        showError(lname, 'Last name can\'t end with spaces');
     }
 
     // Validate membership
@@ -70,17 +85,16 @@ function validateFields() {
     }
 
     // Validate email
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
     if (email.value.trim() === '') {
         valid = false;
         showError(email, 'Please enter your email address');
-    } else if (!email.value.includes('@') || !email.value.includes('.com') || email.value.includes(' ')) {
+    } else if (!emailPattern.test(email.value)) {
         valid = false;
-        let errorMessage = 'Email should include \'@\' and .com';
-        if (email.value.includes(' ')) {
-            errorMessage = 'Email should not include spaces';
-        }
-        showError(email, errorMessage);
+        showError(email, 'Please enter a valid email address');
     }
+
 
     return { valid, selected };
 }
@@ -123,8 +137,7 @@ function confirmRegister() {
             clearInterval(timerInterval);
         }
     }).then(() => {
-        const type = document.querySelector('#type').value;
-        // document.querySelector('#type').innerHTML = type;
+        const type = document.querySelector('#membershipType').value;
         Swal.fire({
             title: "Application successful!",
             text: "You have applied to " + type + " membership",
